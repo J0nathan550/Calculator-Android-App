@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:screenOrientation="portrait"
     android:background="@color/half_black"
     tools:context=".MainActivity">
 
@@ -316,14 +317,29 @@
         android:layout_marginBottom="500dp"
         android:ems="10"
         android:focusable="false"
+        android:hint="@string/default_result"
         android:inputType="none"
-        android:text="@string/default_result"
         android:textAlignment="center"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/operationView"
+        android:layout_width="44dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/default_operation"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/resultTab" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
