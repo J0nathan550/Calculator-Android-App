@@ -1,24 +1,79 @@
 package com.j0nathan550.calculator;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Calculator {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Calculator extends AppCompatActivity {
 
     private String firstStringTab = "", secondStringTab = "";
     private float firstTab = 0, secondTab = 0;
     private int operation = 0;
     private Boolean isAnotherTab = false;
     private Boolean isCommaUsed = false;
-    private final EditText resultText;
-    private final TextView operationText;
+    private EditText resultText;
+    private TextView operationText;
 
-    public Calculator(EditText resultText, TextView operationText){
-        this.resultText = resultText;
-        this.operationText = operationText;
+    @SuppressLint("SourceLockedOrientationActivity")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.calculator);
+        SetupButtons();
     }
 
-    public void buttonOneClick(){
+
+    private void SetupButtons(){
+        resultText = findViewById(R.id.resultTab);
+        operationText = findViewById(R.id.operationView);
+        Button oneButton = findViewById(R.id.buttonOne);
+        Button twoButton = findViewById(R.id.buttonTwo);
+        Button threeButton = findViewById(R.id.buttonThree);
+        Button fourButton = findViewById(R.id.buttonFour);
+        Button fiveButton = findViewById(R.id.buttonFive);
+        Button sixButton = findViewById(R.id.buttonSix);
+        Button sevenButton = findViewById(R.id.buttonSeven);
+        Button eightButton = findViewById(R.id.buttonEight);
+        Button nineButton = findViewById(R.id.buttonNine);
+        Button zeroButton = findViewById(R.id.buttonZero);
+        Button plusButton = findViewById(R.id.buttonPlus);
+        Button minusButton = findViewById(R.id.buttonMinus);
+        Button divideButton = findViewById(R.id.buttonDivide);
+        Button multiplyButton = findViewById(R.id.buttonMultiply);
+        Button percentButton = findViewById(R.id.buttonPercent);
+        Button equalsButton = findViewById(R.id.buttonEquals);
+        Button clearAllButton = findViewById(R.id.buttonClearAll);
+        Button commaButton = findViewById(R.id.buttonComma);
+        Button clearCharacterButton = findViewById(R.id.buttonRemove);
+
+        oneButton.setOnClickListener(view -> buttonOneClick());
+        twoButton.setOnClickListener(view -> buttonTwoClick());
+        threeButton.setOnClickListener(view -> buttonThreeClick());
+        fourButton.setOnClickListener(view -> buttonFourClick());
+        fiveButton.setOnClickListener(view -> buttonFiveClick());
+        sixButton.setOnClickListener(view -> buttonSixClick());
+        sevenButton.setOnClickListener(view -> buttonSevenClick());
+        eightButton.setOnClickListener(view -> buttonEightClick());
+        nineButton.setOnClickListener(view -> buttonNineClick());
+        zeroButton.setOnClickListener(view -> buttonZeroClick());
+        plusButton.setOnClickListener(view -> buttonPlusClick());
+        minusButton.setOnClickListener(view -> buttonMinusClick());
+        divideButton.setOnClickListener(view -> buttonDivideClick());
+        multiplyButton.setOnClickListener(view -> buttonMultiplyClick());
+        percentButton.setOnClickListener(view -> buttonPercentClick());
+        equalsButton.setOnClickListener(view -> buttonEqualClick());
+        clearAllButton.setOnClickListener(view -> buttonClearAllClick());
+        commaButton.setOnClickListener(view -> buttonCommaClick());
+        clearCharacterButton.setOnClickListener(view -> buttonRemoveCharacter());
+    }
+
+    private void buttonOneClick(){
         if (!isAnotherTab) {
             firstStringTab += "1";
             resultText.setText(firstStringTab);
@@ -27,7 +82,7 @@ public class Calculator {
         secondStringTab += "1";
         resultText.setText(secondStringTab);
     }
-    public void buttonTwoClick(){
+    private void buttonTwoClick(){
         if (!isAnotherTab) {
             firstStringTab += "2";
             resultText.setText(firstStringTab);
@@ -36,7 +91,7 @@ public class Calculator {
         secondStringTab += "2";
         resultText.setText(secondStringTab);
     }
-    public void buttonThreeClick(){
+    private void buttonThreeClick(){
         if (!isAnotherTab) {
             firstStringTab += "3";
             resultText.setText(firstStringTab);
@@ -45,7 +100,7 @@ public class Calculator {
         secondStringTab += "3";
         resultText.setText(secondStringTab);
     }
-    public void buttonFourClick(){
+    private void buttonFourClick(){
         if (!isAnotherTab) {
             firstStringTab += "4";
             resultText.setText(firstStringTab);
@@ -54,7 +109,7 @@ public class Calculator {
         secondStringTab += "4";
         resultText.setText(secondStringTab);
     }
-    public void buttonFiveClick(){
+    private void buttonFiveClick(){
         if (!isAnotherTab) {
             firstStringTab += "5";
             resultText.setText(firstStringTab);
@@ -63,7 +118,7 @@ public class Calculator {
         secondStringTab += "5";
         resultText.setText(secondStringTab);
     }
-    public void buttonSixClick(){
+    private void buttonSixClick(){
         if (!isAnotherTab) {
             firstStringTab += "6";
             resultText.setText(firstStringTab);
@@ -72,7 +127,7 @@ public class Calculator {
         secondStringTab += "6";
         resultText.setText(secondStringTab);
     }
-    public void buttonSevenClick(){
+    private void buttonSevenClick(){
         if (!isAnotherTab) {
             firstStringTab += "7";
             resultText.setText(firstStringTab);
@@ -81,7 +136,7 @@ public class Calculator {
         secondStringTab += "7";
         resultText.setText(secondStringTab);
     }
-    public void buttonEightClick(){
+    private void buttonEightClick(){
         if (!isAnotherTab) {
             firstStringTab += "8";
             resultText.setText(firstStringTab);
@@ -90,7 +145,7 @@ public class Calculator {
         secondStringTab += "8";
         resultText.setText(secondStringTab);
     }
-    public void buttonNineClick(){
+    private void buttonNineClick(){
         if (!isAnotherTab) {
             firstStringTab += "9";
             resultText.setText(firstStringTab);
@@ -99,7 +154,7 @@ public class Calculator {
         secondStringTab += "9";
         resultText.setText(secondStringTab);
     }
-    public void buttonZeroClick(){
+    private void buttonZeroClick(){
         if (!isAnotherTab) {
             firstStringTab += "0";
             resultText.setText(firstStringTab);
@@ -108,37 +163,37 @@ public class Calculator {
         secondStringTab += "0";
         resultText.setText(secondStringTab);
     }
-    public void buttonPlusClick(){
+    private void buttonPlusClick(){
         isCommaUsed = false;
         isAnotherTab = true;
         operation = 1;
         operationText.setText("+");
     }
-    public void buttonMinusClick(){
+    private void buttonMinusClick(){
         isCommaUsed = false;
         isAnotherTab = true;
         operation = 2;
         operationText.setText("-");
     }
-    public void buttonMultiplyClick(){
+    private void buttonMultiplyClick(){
         isCommaUsed = false;
         isAnotherTab = true;
         operation = 3;
         operationText.setText("*");
     }
-    public void buttonDivideClick(){
+    private void buttonDivideClick(){
         isCommaUsed = false;
         isAnotherTab = true;
         operation = 4;
         operationText.setText("/");
     }
-    public void buttonPercentClick(){
+    private void buttonPercentClick(){
         isCommaUsed = false;
         isAnotherTab = true;
         operation = 5;
         operationText.setText("%");
     }
-    public void buttonEqualClick(){
+    private void buttonEqualClick(){
         if (firstStringTab.equals("") || secondStringTab.equals("")){
             firstTab = 0;
             secondTab = 0;
@@ -190,7 +245,7 @@ public class Calculator {
         secondStringTab = "";
         operationText.setText("_");
     }
-    public void buttonClearAllClick(){
+    private void buttonClearAllClick(){
         firstTab = 0;
         secondTab = 0;
         isAnotherTab = false;
@@ -201,7 +256,7 @@ public class Calculator {
         resultText.setText("0");
         isCommaUsed = false;
     }
-    public void buttonCommaClick(){
+    private void buttonCommaClick(){
         if (isCommaUsed){
             return;
         }
@@ -215,7 +270,7 @@ public class Calculator {
         resultText.setText(secondStringTab);
         isCommaUsed = true;
     }
-    public void buttonRemoveCharacter(){
+    private void buttonRemoveCharacter(){
         if (firstStringTab.equals("")){
             isCommaUsed = false;
             return;
@@ -225,8 +280,7 @@ public class Calculator {
             if (firstStringTab.contains(".")){
                 isCommaUsed = false;
             }
-            String firstStringTab_edited = firstStringTab.substring(0, firstTabLength - 1);
-            firstStringTab = firstStringTab_edited;
+            firstStringTab = firstStringTab.substring(0, firstTabLength - 1);
             resultText.setText(firstStringTab);
             return;
         }
@@ -242,8 +296,7 @@ public class Calculator {
         if (secondStringTab.contains(".")){
             isCommaUsed = false;
         }
-        String secondStringTab_edited = secondStringTab.substring(0, secondTabLength - 1);
-        secondStringTab = secondStringTab_edited;
+        secondStringTab = secondStringTab.substring(0, secondTabLength - 1);
         resultText.setText(secondStringTab);
     }
 }

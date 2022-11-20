@@ -4,24 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:screenOrientation="portrait"
     android:background="@color/half_black"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/buttonUnknown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="242dp"
-        android:background="@color/visible_black"
-        android:text="@string/unknown"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    android:screenOrientation="portrait"
+    tools:context=".Calculator">
 
     <Button
         android:id="@+id/buttonZero"

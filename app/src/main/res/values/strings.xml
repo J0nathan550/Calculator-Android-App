@@ -22,4 +22,7 @@
     <string name="percent">%</string>
     <string name="unknown">¯\_(ツ)_/¯</string>
     <string name="equals">=</string>
+    <string name="title_activity_main_page">main_page</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

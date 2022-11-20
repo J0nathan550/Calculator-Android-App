@@ -1,4 +1,4 @@
-package com.j0nathan550.calculator;
+package com.j0nathan550.multi_tool;
 
 import android.content.Context;
 
